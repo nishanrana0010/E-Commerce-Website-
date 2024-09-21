@@ -1,0 +1,87 @@
+/* Footer Base Styles */
+.footer {
+  background-color: #67a0d9; /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 40px 20px; /* Increased padding */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  justify-content: space-between; /* Space out the columns */
+  text-align: left; /* Align text to the left */
+}
+
+/* Column Styles */
+.footer-column {
+  flex: 1; /* Allow columns to grow */
+  min-width: 200px; /* Set a minimum width */
+  margin: 20px; /* Space between columns */
+  display: flex; /* Enable flexbox for each column */
+  flex-direction: column; /* Arrange items in a column */
+  /* justify-content: space-between; */
+  text-align: center; /* Ensure space is distributed evenly */
+}
+
+/* Heading Styles */
+.footer-column h4 {
+  font-weight: bold; /* Make titles bold */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+/* Link Styles */
+.footer-links,
+.footer-social-media,
+.footer-newsletter,
+.footer-payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  margin: 10px 0; /* Space between items within columns */
+}
+
+/* Link Appearance */
+.footer-links a,
+.footer-social-media a {
+  margin: 0 15px; /* Space between links */
+  text-decoration: none; /* Remove underline */
+  color: #ffffff; /* White text */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect for Links */
+.footer-links a:hover,
+.footer-social-media a:hover {
+  color: #ffc107; /* Highlight color on hover */
+}
+
+/* Newsletter Styles */
+.footer-newsletter input {
+  padding: 10px; /* Padding for input */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 5px; /* Space to the right */
+}
+
+.footer-newsletter button {
+  padding: 10px 15px; /* Padding for button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #ffc107; /* Highlight button color */
+  color: #343a40; /* Dark text */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.footer-newsletter button:hover {
+  background-color: #e0a800; /* Darker shade on hover */
+}
+
+/* Payment Method Styles */
+.footer-payment-methods {
+  font-size: 14px; /* Smaller font size for payment methods */
+}
+
+/* Copyright Styles */
+.footer-copyright {
+  margin-top: 20px; /* Space above copyright */
+  font-size: 12px; /* Smaller font size for copyright text */
+}

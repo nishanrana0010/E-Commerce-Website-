@@ -1,0 +1,143 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+/* Fashion Banner */
+.fashion-banner {
+  position: relative;
+  background-color: #fcbcee; /* Light peach background color */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  height: 90vh;
+  background-image: url("../../assets/images/womens.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 6px 0 0 6px;
+}
+
+.text-content {
+  max-width: 400px;
+  background-color: rgb(255, 225, 250);
+  position: absolute;
+  right: 0;
+  padding: 0.8rem;
+  border-radius: 6px 0 0 6px;
+  font-family: poppins;
+}
+
+.text-content h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "Pacifico", cursive; /* Use a cursive font similar to the one in the image */
+}
+
+.text-content p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.text-content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fe91e3;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.text-content .btn:hover {
+  background-color: red;
+}
+
+/* Side Banners */
+.side-banners {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-banner {
+  position: relative;
+  background-color: #cce8e5; /* Light teal background color */
+  padding: 20px;
+  height: 44.2vh;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+}
+
+.side-banner.mens-fashion {
+  background-image: url("../../assets/images/mens.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #91dfd7; /* Light teal background color */
+  gap: 0.5rem;
+  font-family: poppins;
+  border-radius: 0 6px 0 0;
+}
+
+.side-banner.cosmetics {
+  background-image: url("../../assets/images/kids.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fcd7c7; /* Light pink background color */
+  gap: 0.5rem;
+  text-align: center;
+  font-family: poppins;
+  border-radius: 0 0 6px 0;
+}
+
+.side-banner h3 {
+  font-size: 24px;
+  color: #333;
+  /* margin-bottom: 5px; */
+}
+
+.side-banner p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.side-banner .btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #6198d0;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.side-banner .btn:hover {
+  background-color: rgb(0, 0, 0);
+}
+.button-content {
+  gap: 0.5rem;
+}

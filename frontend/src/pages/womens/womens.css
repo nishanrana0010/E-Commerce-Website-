@@ -1,0 +1,18 @@
+/* src/pages/WomensDashboard.css */
+.dashboard-container {
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}

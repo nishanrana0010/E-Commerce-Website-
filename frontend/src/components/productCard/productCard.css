@@ -1,0 +1,67 @@
+/* src/components/ProductCard.css */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 275px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  margin: 10px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: #e67e22;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.add-to-cart:hover {
+  background-color: #2980b9;
+}
+
+.buy-now {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.buy-now:hover {
+  background-color: #c0392b;
+}
