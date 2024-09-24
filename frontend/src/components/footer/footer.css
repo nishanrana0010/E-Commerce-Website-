@@ -2,7 +2,7 @@
 .footer {
   background-color: #67a0d9; /* Dark background */
   color: #ffffff; /* White text */
-  padding: 40px 20px; /* Increased padding */
+  padding: 20px 20px; /* Increased padding */
   display: flex; /* Use flexbox for layout */
   flex-wrap: wrap; /* Allow wrapping for responsiveness */
   justify-content: space-between; /* Space out the columns */
@@ -11,13 +11,14 @@
 
 /* Column Styles */
 .footer-column {
-  flex: 1; /* Allow columns to grow */
+  /* Allow columns to grow */
   min-width: 200px; /* Set a minimum width */
   margin: 20px; /* Space between columns */
   display: flex; /* Enable flexbox for each column */
   flex-direction: column; /* Arrange items in a column */
   /* justify-content: space-between; */
-  text-align: center; /* Ensure space is distributed evenly */
+  text-align: start; /* Ensure space is distributed evenly */
+  justify-content: flex-start;
 }
 
 /* Heading Styles */

@@ -1,5 +1,6 @@
 /* src/pages/WomensDashboard.css */
 .dashboard-container {
+  width: 100%;
   padding: 20px;
   font-family: "Poppins", sans-serif;
 }
@@ -11,6 +12,7 @@
 }
 
 .products-grid {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;

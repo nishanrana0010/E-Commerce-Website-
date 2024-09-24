@@ -7,14 +7,14 @@ import { Buffer } from "buffer";
 
 window.Buffer = Buffer;
 
-const WomensDashboard = ({ addToCart }) => {
+const KidsDashboard = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/collection?category=womens" // Only fetch women's products
+          "http://localhost:5000/collection?category=kids" // Only fetch women's products
         );
         setProducts(response.data);
       } catch (error) {
@@ -28,7 +28,7 @@ const WomensDashboard = ({ addToCart }) => {
     <div>
       <Navbar />
       <div className="dashboard-container">
-        <h2>Women's Fashion</h2>
+        <h2>Kid's Fashion</h2>
         <div className="products-grid">
           {products.map((product) => {
             let imageBase64;
@@ -62,4 +62,4 @@ const WomensDashboard = ({ addToCart }) => {
   );
 };
 
-export default WomensDashboard;
+export default KidsDashboard;

@@ -18,10 +18,10 @@ const Navbar = () => {
           <Link to="/womens">Women's</Link>
         </li>
         <li>
-          <a href="#">Men's</a>
+          <Link to="/mens">Men's</Link>
         </li>
         <li>
-          <a href="#">Kids</a>
+          <Link to="/kids">Kid's</Link>
         </li>
 
         <li>
@@ -35,9 +35,10 @@ const Navbar = () => {
         <a href="#" className="search-icon">
           <i className="fas fa-search"></i>
         </a>
-        <a href="#" className="cart-icon">
+
+        <Link to="/myCart" className="cart-icon">
           <i className="fas fa-shopping-cart"></i>
-        </a>
+        </Link>
       </div>
     </nav>
   );

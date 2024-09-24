@@ -26,7 +26,7 @@ const Dashboard = () => {
             <div className="button-content">
               <h3>Men's fashion</h3>
               <p>358 items</p>
-              <Link to="/womens" className="btn">
+              <Link to="/mens" className="btn">
                 Shop Now
               </Link>
             </div>
@@ -35,7 +35,7 @@ const Dashboard = () => {
             <div className="button-content">
               <h3>Kids fashion</h3>
               <p>159 items</p>
-              <Link to="/womens" className="btn">
+              <Link to="/kids" className="btn">
                 Shop Now
               </Link>
             </div>
