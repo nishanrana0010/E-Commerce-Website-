@@ -75,7 +75,7 @@ app.get("/collection/:id", async (req, res) => {
 });
 
 // Route to POST a new product with image upload
-app.post("/products", upload.single("image"), async (req, res) => {
+app.post("/cart", upload.single("image"), async (req, res) => {
   const { title, imageUrl, price, category } = req.body;
 
   // Create a new product

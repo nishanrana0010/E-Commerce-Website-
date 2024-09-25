@@ -45,9 +45,7 @@ const Cart = ({ cartItems, setCartItems }) => {
                 <td>
                   <div className="cart-item">
                     <img
-                      src={`data:image/png;base64,${Buffer.from(
-                        item.imageUrl
-                      ).toString("base64")}`}
+                      src={item.imageUrl} // Directly use imageUrl
                       alt={item.title}
                     />
                     <div className="item-details">
@@ -56,7 +54,7 @@ const Cart = ({ cartItems, setCartItems }) => {
                     </div>
                   </div>
                 </td>
-                <td>${item.price.toFixed(2)} </td>
+                <td>${item.price.toFixed(2)}</td>
                 <td>
                   <button
                     onClick={() => handleQuantityChange(item._id, -1)}
@@ -69,7 +67,7 @@ const Cart = ({ cartItems, setCartItems }) => {
                     +
                   </button>
                 </td>
-                <td>${item.total.toFixed(2)} </td>
+                <td>${item.total.toFixed(2)}</td>
                 <td>
                   <button onClick={() => handleRemoveItem(item._id)}>X</button>
                 </td>

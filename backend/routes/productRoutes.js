@@ -1,44 +1,44 @@
-// routes/products.js
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
-const Product = require("../models/product"); // Assuming you have a Product model
+const Cart = require("../models/Cart"); // Assuming Cart is a Mongoose model
 
-// Utility function to convert image URL to bytes (Example implementation)
-const urlToByteArray = async (imageUrl) => {
-  const response = await fetch(imageUrl);
-  const buffer = await response.arrayBuffer();
-  return Buffer.from(buffer);
-};
-
-// Route to add a product
-router.post("/add-product", async (req, res) => {
-  const { title, price, imageUrl, category } = req.body;
-
+// Add product to cart
+router.post("/cart", async (req, res) => {
+  const { userId, productId, quantity } = req.body;
   try {
-    // Convert image URL to bytes
-    const imageBytes = await urlToByteArray(imageUrl);
+    let cart = await Cart.findOne({ userId });
 
-    // Create a new product instance
-    const newProduct = new Product({
-      title,
-      price,
-      image: imageBytes,
-      category,
-    });
-
-    // Save product to the appropriate collection
-    if (category === "mens") {
-      await newProduct.save();
-    } else if (category === "womens") {
-      await newProduct.save();
-    } else if (category === "kids") {
-      await newProduct.save();
+    if (!cart) {
+      // If no cart exists for the user, create a new one
+      cart = new Cart({ userId, items: [] });
     }
 
-    res.status(201).json({ message: "Product added successfully" });
+    const existingItem = cart.items.find(
+      (item) => item.productId === productId
+    );
+
+    if (existingItem) {
+      // Update quantity if product is already in the cart
+      existingItem.quantity += quantity;
+      existingItem.total = existingItem.quantity * existingItem.price;
+    } else {
+      // Add new product to the cart
+      const product = await Product.findById(productId); // Assuming Product is another model
+      cart.items.push({
+        productId: productId,
+        title: product.title,
+        price: product.price,
+        quantity: quantity,
+        total: product.price * quantity,
+      });
+    }
+
+    await cart.save();
+    res.status(200).json({ success: true, cart });
   } catch (error) {
-    res.status(500).json({ message: "Failed to add product", error });
+    res
+      .status(500)
+      .json({ success: false, error: "Error adding product to cart" });
   }
 });
 

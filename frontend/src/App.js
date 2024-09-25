@@ -39,7 +39,12 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route
           path="/womens"
-          element={<WomensDashboard addToCart={addToCart} />}
+          element={
+            <WomensDashboard
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
+          }
         />
         <Route
           path="/myCart"
