@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+// import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Navbar from "../../components/navbar/navbar";
 import ProductCard from "../../components/productCard/productCard";
 import axios from "axios";
@@ -10,7 +10,7 @@ window.Buffer = Buffer;
 
 const WomensDashboard = ({ cartItems, setCartItems }) => {
   const [products, setProducts] = useState([]);
-  const navigate = useNavigate(); // Initialize navigate
+  // const navigate = useNavigate(); // Initialize navigate
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -51,8 +51,8 @@ const WomensDashboard = ({ cartItems, setCartItems }) => {
       ]);
     }
 
-    // Navigate to the cart page after adding
-    navigate("/myCart");
+    // Navigate to the myCart page after adding the product to cart
+    // navigate("/myCart");
   };
 
   return (

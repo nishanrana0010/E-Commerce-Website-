@@ -29,7 +29,7 @@ const Cart = ({ cartItems, setCartItems }) => {
     <div>
       <Navbar />
       <div className="cart-container">
-        <h1>Cart</h1>
+        <h1>myCart</h1>
         <table>
           <thead>
             <tr>

@@ -50,7 +50,12 @@ function App() {
           path="/myCart"
           element={<Cart cartItems={cartItems} setCartItems={setCartItems} />}
         />
-        <Route path="/mens" element={<MensDashboard addToCart={addToCart} />} />
+        <Route
+          path="/mens"
+          element={
+            <MensDashboard cartItems={cartItems} setCartItems={setCartItems} />
+          }
+        />
         <Route path="/kids" element={<KidsDashboard addToCart={addToCart} />} />
       </Routes>
     </Router>

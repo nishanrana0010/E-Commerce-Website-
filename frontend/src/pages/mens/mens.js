@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Navbar from "../../components/navbar/navbar";
 import ProductCard from "../../components/productCard/productCard";
 import axios from "axios";
@@ -7,14 +8,15 @@ import { Buffer } from "buffer";
 
 window.Buffer = Buffer;
 
-const MensDashboard = ({ addToCart }) => {
+const MensDashboard = ({ cartItems, setCartItems }) => {
   const [products, setProducts] = useState([]);
+  // const navigate = useNavigate(); // Initialize navigate
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/collection?category=mens" // Only fetch women's products
+          "http://localhost:5000/collection?category=mens" // Only fetch men's products
         );
         setProducts(response.data);
       } catch (error) {
@@ -24,6 +26,35 @@ const MensDashboard = ({ addToCart }) => {
 
     fetchProducts();
   }, []);
+
+  // Add to cart and navigate to the cart page
+  const addToCart = (product) => {
+    const existingItem = cartItems.find((item) => item._id === product._id);
+    if (existingItem) {
+      // If product already in cart, update quantity and total
+      setCartItems(
+        cartItems.map((item) =>
+          item._id === product._id
+            ? {
+                ...item,
+                quantity: item.quantity + 1,
+                total: (item.quantity + 1) * item.price,
+              }
+            : item
+        )
+      );
+    } else {
+      // Add new product to cart
+      setCartItems([
+        ...cartItems,
+        { ...product, quantity: 1, total: product.price },
+      ]);
+    }
+
+    // Navigate to the myCart page after adding the product to cart
+    // navigate("/myCart");
+  };
+
   return (
     <div>
       <Navbar />
@@ -51,7 +82,7 @@ const MensDashboard = ({ addToCart }) => {
                 imageUrl={imageBase64}
                 title={product.title}
                 price={product.price}
-                onAddToCart={() => addToCart(product)}
+                onAddToCart={() => addToCart(product)} // Call addToCart when clicking on Add to Cart
                 onBuyNow={() => alert(`Proceeding to buy ${product.title}!`)}
               />
             );
